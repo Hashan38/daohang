@@ -1,0 +1,14 @@
+.box {
+  border-radius: 20%;
+  width: 15vmin;
+  height: 15vmin;
+  opacity: 0;
+}
+
+.box:nth-child(1) {
+  background: red;
+}
+
+.box:nth-child(2) {
+  background: orange;
+}

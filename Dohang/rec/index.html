@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="小菜鸟导航网-全球学习网站合集"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>小菜鸟导航网-全球学习网站合集</title>
+    <link href="没有文字的logo(1).ico" rel="icon" type="image/x-ico" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="E:\Dohang\css\dao" rel="stylesheet" />
+    <link href="E:\Dohang\js\ipn.js" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+     
+    <style>
+      
+      body {
+        margin: 0;
+        height: 150vh;
+        background-color: #eee;
+      }
+      .flex {
+        display: flex;
+      }
+      .column {
+        flex-direction: column;
+      }
+      ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      ul.topnav li {
+        float: left;
+      }
+
+      ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      ul.topnav li a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      ul.topnav li a.active {
+        background-color: #4caf50;
+      }
+
+      ul.topnav li.right {
+        float: right;
+      }
+      .footer {
+        text-align: center;
+      }
+      /*sss*/
+      .cards-list {
+        z-index: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        margin: 10px auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+          -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .card .card_image {
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+      }
+
+      .card .card_image img {
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+        object-fit: cover;
+      }
+
+      .card .card_title {
+        text-align: center;
+        border-radius: 0px 0px 40px 40px;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: -80px;
+        height: 40px;
+      }
+
+      .card:hover {
+        transform: scale(0.9, 0.9);
+        box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+          -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+      }
+
+      .title-white {
+        color: white;
+      }
+
+      .title-black {
+        color: black;
+      }
+
+      @media all and (max-width: 500px) {
+        .card-list {
+          /* On small screens, we are no longer using row direction but column */
+          flex-direction: column;
+        }
+      }
+      /*slogn*/
+ #app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+
+#app h1 {
+  --fontSize: 60px;
+  --lineHeight: 80px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: calc(50vh - var(--lineHeight)) auto 0;
+  font-size: var(--fontSize);
+}
+
+#app a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#app canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+
+/*搜索引擎*/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("./fontawesome-webfont.eot");
+  src: url("./fontawesome-webfont.eot") format("embedded-opentype"),
+    url("./fontawesome-webfont.woff2") format("woff2"),
+    url(".fontawesome-webfont.woff") format("woff"),
+    url("./fontawesome-webfont.ttf") format("truetype"),
+    url("./fontawesome-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.search-box {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  height: 40px;
+  border: 30px;
+  border-radius: 40px;
+  padding: 25px;
+  opacity: 0;
+  transition-delay: 99999999s;
+  transition-duration: 1s;
+}
+
+.search-box:hover > .search-txt {
+  width: 500px;
+  padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+  color: white;
+  background: black;
+}
+
+.search-btn {
+  transition: 0.5s;
+  font-family: FontAwesome;
+  font-size: 25px;
+  color: black;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: rgb(51, 159, 150);
+  font-size: 25px;
+  transition: 0.6s;
+  line-height: 50px;
+  width: 0px;
+}
+
+@keyframes flash {
+  50% {
+    transform: scale(1.5);
+  }
+
+  80% {
+    transform: rotate(-60deg);
+  }
+
+  100% {
+    transform: rotate(30deg);
+  }
+}
+html:hover .search-box {
+  opacity: 1;
+  transition-delay: 0s;
+  transition-duration: 0s;
+}
+
+   </style>
+
+   <script>
+import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.5/build/threejs-toys.module.cdn.min.js'
+
+const pc = particlesCursor({
+  el: document.getElementById('app'),
+  gpgpuSize: 512,
+  colors: [0x00ff00, 0x0000ff],
+  color: 0xff0000,
+  coordScale: 0.5,
+  noiseIntensity: 0.001,
+  noiseTimeCoef: 0.0001,
+  pointSize: 5,
+  pointDecay: 0.0025,
+  sleepRadiusX: 250,
+  sleepRadiusY: 250,
+  sleepTimeCoefX: 0.001,
+  sleepTimeCoefY: 0.002
+})
+
+document.body.addEventListener('click', () => {
+  pc.uniforms.uColor.value.set(Math.random() * 0xffffff)
+  pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2
+  pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001
+  pc.uniforms.uPointSize.value = 1 + Math.random() * 10
+})
+
+/* 搜索引擎 代码*/
+
+   </script>
+  </head>
+  <body class="flex column" style="background-color: #181717">
+    <!--导航栏部分-->
+    <div style="flex: 0.4; display: flex; background-color: #181717">
+      <!--导航栏 logo-->
+      <div style="flex: 0.5; display: flex; align-items: center">
+        <img src="没有文字的logo(1).png" style="height: 50px" />
+        <h2 style="font-size: 30px; width: 150px; color: white">小菜鸟导航</h2>
+      </div>
+      <!--链接按钮-->
+      <div
+        style="
+          flex: 9;
+          display: flex;
+          align-items: center;
+          justify-content: end;
+        "
+      >
+        <ul class="topnav flex" style="height: 50px">
+          <li><a href="#news">申请投稿</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--内容区-->
+
+  <div class=" " style="width:100%;
+    height: 250px; 
+        
+        ">
+      <!--搜索引擎与日常TOD-->
+      <div class="container">
+        <center>
+		     <div class="search-box">
+		        <input class="search-txt" type='text' id='inp' placeholder="您要搜索什么?"/>
+		        <input class="search-btn" type='button' id='btn' value='&#xf002' />
+		     </div>
+			           
+		    </center>
+
+      </div>
+
+       
+       
+  </div >
+        
+  <script>
+  var oInp = document.getElementById("inp");
+  var oBtn = document.getElementById("btn");
+
+   oBtn.onclick = function () {
+    Search();
+   };
+
+  document.onkeydown = function () {
+    if (event.keyCode == 13) {
+    Search();
+  }
+};
+
+ function Search() {
+  var url = "https://www.baidu.com/s?wd=" + oInp.value;
+  window.open(url);
+ }
+</script>
+
+    
+             
+</div>
+     
+        
+    </div>
+
+</div>
+
+  </div>
+      
+     </div>
+      <!--网站导航区-->
+      <div style="height: 600px" class="flex column">
+        <div>
+          <!--编程网站区域-->
+          <div style="height: 250px" class="flex column">
+            <!--标签-->
+            <div style="flex: 0.3">
+              <div
+                style="width: 130px; height: 60px; align-items: center"
+                class="flex"
+              >
+                <h3 style="width: 130px; height: auto;color: white;">编程网站</h3>
+              </div>
+            </div>
+            <!--卡片-->
+            <div style="flex: 1; justify-content: space-around" class="flex">
+              <!--卡片1-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://www.midorg.com/" class="card_image" target="_blank"> <img src="midlogo.png"></a>
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                  
+                </div>
+                <h3 class="title-white " style="text-align:center;">元岛</h3>
+              </div>
+              <!--卡片2-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://github.com/" class="card_image" target="_blank"><img src="th.jpg" /></a>
+                      
+                     
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">Github</h3>
+                <script>
+                   
+                </script>
+              </div>
+              <!--卡片3-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://www.runoob.com/" class="card_image" target="_blank"><img src="runoob.png" /></a>
+                    
+                  </div>
+                  <div class="card_title title-white">
+                   
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">菜鸟网</h3>
+              </div>
+              <!--卡片4-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://juejin.cn/" class="card_image" target="_blank"><img src="juejin.png" /></a>
+                    
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">稀土掘金</h3>
+              </div>
+              <!--卡片5-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://developer.mozilla.org/zh-CN/" class="card_image" target="_blank"><img src="Mdn.png" /></a>
+                    
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">Mdn</h3>
+              </div>
+              
+            </div>
+          </div>
+          <!--大学学习网站区域-->
+          <div style="height: 250px">
+           <div style="flex: 0.3">
+              <div
+                style="width: 130px; height: 60px; align-items: center"
+                class="flex"
+              > 
+                
+                <h3 style="width: 130px; height: auto;color: white;">慕课网站</h3>
+              </div>
+            </div>
+            <!--卡片-->
+            <div style="flex: 1; justify-content: space-around" class="flex">
+              <!--卡片1-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                      <a href="
+                                https://www.zjy2.icve.com.cn/portal/login.html" class="card_image" target="_blank"><img src="zhijiaoyun.png" /></a>
+                    
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">职教云</h3>
+              </div>
+              <!--卡片2-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    
+                     <a href="https://www.icourse163.org/" class="card_image" target="_blank"><img src="Mooc.png" /></a>
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">中国慕课网</h3>
+              </div>
+              <!--卡片3-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    <a href="https://www.szpt.edu.cn/" class="card_image" target="_blank"><img src=" OIP-C.jpg"/></a>
+                    
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                    <h3 class="title-white " style="text-align:center;">深职院官网</h3>
+              </div>
+              <!--卡片4-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                   
+                    <a href="https://www.bilibili.com/" class="card_image" target="_blank"><img src="u=2226249483,1124899616&fm=253&fmt=auto&app=120&f=JPEG.webp" /></a>
+                  </div>
+                  <div class="card_title title-white">
+                     
+                  </div>
+                </div>
+                 <h3 class="title-white " style="text-align:center;">哔哩哔哩</h3>
+              </div>
+              <!--卡片5-->
+              <div>
+                <div class="card 1">
+                  <div class="card_image">
+                    
+                     <a href="https://le.ouchn.cn/#/home" class="card_image" target="_blank"><img src="OIP-C (6).jpg" /></a>
+                  </div>
+                  <div class="card_title title-white">
+                    
+                  </div>
+                </div>
+                <h3 class="title-white " style="text-align:center;">终身学习平台</h3>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--底部-->
+    <div
+      class="footer"
+      style="
+        flex: 3;
+        background-color: #181717;
+
+        position: relative;
+        left: 0px;
+
+        color: white;
+      "
+    >
+       <img src="44.png" style="height:250px ; ">
+    </div>
+  </body>
+</html>
